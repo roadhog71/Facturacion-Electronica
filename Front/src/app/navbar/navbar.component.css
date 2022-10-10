@@ -1,8 +1,10 @@
 .mat-toolbar {
   background: rgb(72, 73, 74);
   color: #fff;
+  justify-content: center;
 }
 
 .button {
-  margin-right: 80;
+  color: #fff;
+  background-color: transparent;
 }
