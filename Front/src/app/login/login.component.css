@@ -1,0 +1,77 @@
+mat-card {
+  max-width: 600px;
+  margin: 2em auto;
+  text-align: center;
+  max-height: 600px;
+}
+
+.header {
+  text-align: center;
+}
+
+.full-width {
+  width: 80%;
+}
+
+.forgot-password {
+  padding-left: 0px;
+}
+
+.email-input {
+  padding-top: 10px;
+}
+
+.aLink {
+  float: center;
+  text-decoration: none;
+}
+
+.title1 {
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.fbbutton {
+  /* border-radius: 30px;
+  padding: 10px 50px;
+  margin: 30px 80px 30px 0px;
+  color: #fff;
+  background-color: rgb(149, 75, 152);
+  border: none;
+  font-size: 20px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 24px;
+  /* gap: 10px; */
+  width: 200px;
+  height: 40px;
+  /* left: 501px;
+  top: 237px; */
+
+  background: #954b98;
+  border-radius: 100px;
+}
+
+.googbutton {
+  /* border: 1px solid black;
+  border-radius: 30px;
+  padding: 10px 50px;
+  margin: 0px 0px 0px 20px;
+  color: rgb(149, 75, 152);
+  background-color: #fff; */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  padding: 10px 24px;
+  /* gap: 10px; */
+  width: 200px;
+  height: 40px;
+  left: 501px;
+  top: 237px;
+
+  background: #954b98;
+  border-radius: 100px;
+}
