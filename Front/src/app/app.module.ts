@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { LogGinComponent } from './log-gin/log-gin.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [AppComponent, NavbarComponent, LogGinComponent],
   imports: [
@@ -23,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatCardModule,
     MatInputModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
