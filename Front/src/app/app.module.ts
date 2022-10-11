@@ -9,6 +9,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LogGinComponent } from './log-gin/log-gin.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, LogGinComponent],
@@ -19,6 +21,8 @@ import { LogGinComponent } from './log-gin/log-gin.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatCardModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
