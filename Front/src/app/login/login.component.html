@@ -3,8 +3,8 @@
     <div class="header">
       <P class="title1">Iniciar sesion con</P>
     </div>
-    <button class="fbbutton">Facebook</button>
-    <button class="googbutton">Google</button>
+    <!-- <button class="fbbutton">Facebook</button>
+    <button class="googbutton">Google</button> -->
     <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
       <div class="emailInput">
         <mat-form-field class="full-width" appearance="outline">
@@ -49,13 +49,12 @@
       <button class="purplebutton">Iniciar Sesion</button>
     </form>
 
-    <div class="button-row">
-      <p>Crear cuenta nueva</p>
-    </div>
-    <span>
-      <a class="text-link" class="aLink" routerLink="/auth/forgot-password"
-        >¿Olvidaste tu contrasenha?</a
-      >
-    </span>
+    <a class="text-link" class="aLink" routerLink="/auth/forgot-password"
+      >¿Olvidaste tu contrasenha?</a
+    >
+
+    <button class="white-button">
+      <p>Crear cuenta</p>
+    </button>
   </mat-card-content>
 </mat-card>
