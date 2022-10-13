@@ -1,3 +1,9 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  />
+</head>
 <mat-toolbar>
   <!-- <span class="example-spacer"></span> -->
   <a
@@ -14,6 +20,7 @@
     target="_blank"
     >PRODUCTOS</a
   >
+
   <a
     class="button"
     mat-flat-button
@@ -24,7 +31,7 @@
   <img
     src="../../assets/images/logo.png"
     alt="PALERMO SA Logo"
-    style="max-width: 15%; min-width: 15%"
+    style="max-width: 11%; min-width: 11%"
   />
 
   <a
@@ -41,4 +48,13 @@
     target="_blank"
     >MI FACTURA</a
   >
+
+  <!-- <a [routerLink]="['login']">Login</a> -->
+  <a [routerLink]="['login']">
+    <mat-icon
+      class="login-icon"
+      aria-hidden="false"
+      fontIcon="login"
+    ></mat-icon>
+  </a>
 </mat-toolbar>
