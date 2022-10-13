@@ -14,8 +14,9 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { InvoiceDownloaderComponent } from './invoice-downloader/invoice-downloader.component';
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, LoginComponent, HomeComponent],
+  declarations: [AppComponent, NavbarComponent, LoginComponent, HomeComponent, InvoiceDownloaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
