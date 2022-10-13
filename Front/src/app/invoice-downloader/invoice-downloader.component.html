@@ -1,1 +1,27 @@
-<p>invoice-downloader works!</p>
+<mat-card class="invoice-card">
+  <div class="explanation-text">
+    <h2>Descarga tu factura</h2>
+    <p>
+      En el caso de que no hayas podido descargar tu factura, favor volvé a
+      intentarlo más tarde. El proceso de validación podría demorarse cómo
+      máximo 72 Hs. Ejemplo:
+    </p>
+  </div>
+  <div class="select-field">
+    <mat-form-field appearance="fill">
+      <mat-label>Seleccione un formato</mat-label>
+      <mat-select [(value)]="selected">
+        <mat-option value="A4">A4</mat-option>
+        <mat-option value="Ticket">Ticket</mat-option>
+        <mat-option value="PDF">PDF</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- <p>Ha seleccionado formato: {{ selected }}</p> -->
+  </div>
+
+  <img
+    class="invoice-pic"
+    src="../../assets/images/invoice_example.png"
+    alt=""
+  />
+</mat-card>

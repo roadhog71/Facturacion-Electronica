@@ -15,8 +15,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { InvoiceDownloaderComponent } from './invoice-downloader/invoice-downloader.component';
+import { MatSelectModule } from '@angular/material/select';
+
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, LoginComponent, HomeComponent, InvoiceDownloaderComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    LoginComponent,
+    HomeComponent,
+    InvoiceDownloaderComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,6 +35,7 @@ import { InvoiceDownloaderComponent } from './invoice-downloader/invoice-downloa
     MatCardModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

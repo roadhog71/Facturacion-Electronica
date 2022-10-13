@@ -1,0 +1,20 @@
+.invoice-card {
+  max-width: 45%;
+}
+.explanation-text {
+  max-width: 500px;
+  height: 100px;
+  margin-bottom: 60px;
+}
+
+.select-field {
+  margin-top: 20px;
+  font-size: x-small;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.invoice-pic {
+  max-height: 100%;
+  max-width: 100%;
+}
