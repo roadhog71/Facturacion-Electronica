@@ -1,74 +1,91 @@
 <mat-card class="container-card">
   <mat-card class="invoice-card">
-    <div class="explanation-text">
-      <h2>Descarga tu factura</h2>
-      <p>
-        En el caso de que no hayas podido descargar tu factura, favor volvé a
-        intentarlo más tarde. El proceso de validación podría demorarse cómo
-        máximo 72 Hs. Ejemplo:
-      </p>
-    </div>
-    <div class="select-field">
-      <mat-form-field appearance="fill">
-        <mat-label>Seleccione un formato</mat-label>
-        <mat-select [(value)]="selected">
-          <mat-option value="A4">A4</mat-option>
-          <mat-option value="Ticket">Ticket</mat-option>
-          <mat-option value="PDF">PDF</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <!-- <p>Ha seleccionado formato: {{ selected }}</p> -->
-    </div>
+    <!-- <div class="download-container"> -->
+    <!-- <div class="explanation-text"> -->
+    <h1>Descarga tu factura</h1>
+    <p>
+      En el caso de que no hayas podido descargar tu factura, favor volvé a
+      intentarlo más tarde. El proceso de validación podría demorarse cómo
+      máximo 72 Hs.
+    </p>
+    <!-- </div> -->
+    <!-- <div class="select-field"> -->
 
-    <img
+    <!-- <p>Ha seleccionado formato: {{ selected }}</p> -->
+    <!-- </div> -->
+    <!-- <img
       class="invoice-pic"
       src="../../assets/images/invoice-example.png"
       alt=""
-    />
-  </mat-card>
+    /> -->
+    <!-- </div> -->
+    <mat-card class="credential-card">
+      <h2>Acceso</h2>
+      <!-- <h2 class="credential-title">Accede con tu PIN a tu factura electronica</h2> -->
+      <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+        <div class="emailInput">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label> CI o RUC (Sin DV)</mat-label>
+            <input
+              formControlName="email"
+              matInput
+              placeholder="Enter email address"
+              required
+            />
+            <mat-error *ngIf="!loginForm.controls['email'].valid">
+              CI o RUC es requerido
+            </mat-error>
+          </mat-form-field>
+          <div class="tooltip">
+            <mat-icon
+              class="download-icon"
+              aria-hidden="false"
+              fontIcon="info"
+            ></mat-icon>
+            <span class="tooltiptext">
+              <img
+                class="invoice-pic"
+                src="../../assets/images/invoice-example.png"
+                alt=""
+            /></span>
+          </div>
+        </div>
 
-  <mat-card class="credential-card">
-    <h3 class="credential-title">Accede con tu PIN a tu factura electronica</h3>
-    <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
-      <div class="emailInput">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label> CI o RUC (Sin DV)</mat-label>
+          <mat-label>PIN</mat-label>
           <input
-            formControlName="email"
+            formControlName="password"
             matInput
-            placeholder="Enter email address"
+            [type]="hide ? 'password' : 'text'"
             required
           />
-          <mat-error *ngIf="!loginForm.controls['email'].valid">
-            CI o RUC es requerido
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide Password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>
+              {{ hide ? "visibility_off" : "visibility" }}
+            </mat-icon>
+          </button>
+          <mat-error *ngIf="!loginForm.controls['password'].valid">
+            PIN es requerido
           </mat-error>
         </mat-form-field>
-      </div>
-
-      <mat-form-field class="full-width" appearance="outline">
-        <mat-label>PIN</mat-label>
-        <input
-          formControlName="password"
-          matInput
-          [type]="hide ? 'password' : 'text'"
-          required
-        />
-        <button
-          mat-icon-button
-          matSuffix
-          (click)="hide = !hide"
-          [attr.aria-label]="'Hide Password'"
-          [attr.aria-pressed]="hide"
-        >
-          <mat-icon>
-            {{ hide ? "visibility_off" : "visibility" }}
-          </mat-icon>
-        </button>
-        <mat-error *ngIf="!loginForm.controls['password'].valid">
-          PIN es requerido
-        </mat-error>
-      </mat-form-field>
-      <div><button class="download-button">Descargar</button></div>
-    </form>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Seleccione un formato</mat-label>
+            <mat-select [(value)]="selected">
+              <mat-option value="A4">A4</mat-option>
+              <mat-option value="Ticket">Ticket</mat-option>
+              <mat-option value="PDF">PDF</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div><button class="download-button">Descargar</button></div>
+      </form>
+    </mat-card>
   </mat-card>
 </mat-card>

@@ -1,13 +1,18 @@
 .container-card {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   border: none;
   box-shadow: none;
 }
 
 .invoice-card {
-  max-width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 50%;
+  box-shadow: none;
+  flex-direction: column;
+  font-size: small;
 }
 
 .credential-card {
@@ -20,28 +25,46 @@
   font-weight: 500;
 }
 
-.explanation-text {
+.download-container {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.full-width {
+  width: 210px;
+}
+
+/* .explanation-text {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
   max-width: 500px;
   height: 100px;
   margin-bottom: 70px;
-}
+  font-weight: 500;
+} */
 
-.select-field {
-  margin-top: 20px;
-  font-size: x-small;
+/* .select-field {
   display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
   justify-content: flex-start;
-}
+  margin-top: 120px;
+  font-size: x-small;
+} */
 
 .invoice-pic {
-  max-height: 70%;
-  max-width: 70%;
+  max-height: 300%;
+  max-width: 300%;
 }
 
 .download-button {
   border-radius: 30px;
   color: #fff;
-  background-color: rgb(149, 75, 152);
+  background-color: #673ab7;
   border: none;
   font-size: 15px;
   padding: 10px, 24px, 10px, 24px;
@@ -49,8 +72,56 @@
   align-items: center;
   width: 120px;
   height: 40px;
-  background: #954b98;
+  background: #673ab7;
   border-radius: 100px;
   margin-bottom: 30px;
   margin-top: 20px;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  margin-left: 10px;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  /* background-color: #555; */
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  top: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
