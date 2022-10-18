@@ -7,7 +7,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./invoice-downloader.component.css'],
 })
 export class InvoiceDownloaderComponent implements OnInit {
-  selected = '';
   hide: boolean = false;
 
   constructor(private fb: FormBuilder) {}

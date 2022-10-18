@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { InvoiceDownloaderComponent } from './invoice-downloader/invoice-downloader.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ReactiveFormsModule,
     MatSelectModule,
     MatTooltipModule,
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
