@@ -1,14 +1,36 @@
 .mat-toolbar {
   background: rgb(72, 73, 74);
   color: #fff;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.button {
-  color: #fff;
+.image-container {
+  display: flex;
+  justify-content: center;
   background-color: transparent;
+  box-shadow: none;
+}
+
+img {
+  object-fit: cover; /*this makes the image in src fit to the size specified below*/
+  width: 50%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+  height: 10%;
+}
+
+.back-button-container {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.back-icon {
+  color: #fff;
 }
 
 .login-icon {
   color: #fff;
+}
+
+.login-button-container {
+  background-color: transparent;
+  box-shadow: none;
 }

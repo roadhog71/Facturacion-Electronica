@@ -5,56 +5,34 @@
   />
 </head>
 <mat-toolbar>
-  <!-- <span class="example-spacer"></span> -->
-  <a
-    class="button"
-    mat-flat-button
-    href="https://www.google.com/"
-    target="_blank"
-    >INICIO</a
-  >
-  <a
-    class="button"
-    mat-flat-button
-    href="https://www.google.com/"
-    target="_blank"
-    >PRODUCTOS</a
-  >
-
-  <a
-    class="button"
-    mat-flat-button
-    href="https://www.google.com/"
-    target="_blank"
-    >EMPRESA</a
-  >
-  <img
-    src="../../assets/images/logo.png"
-    alt="PALERMO SA Logo"
-    style="max-width: 11%; min-width: 11%"
-  />
-
-  <a
-    class="button"
-    mat-flat-button
-    href="https://www.google.com/"
-    target="_blank"
-    >COMERCIO INTERNACIONAL</a
-  >
-  <a
-    class="button"
-    mat-flat-button
-    href="https://www.google.com/"
-    target="_blank"
-    >MI FACTURA</a
-  >
-
+  <mat-card class="back-button-container">
+    <a [routerLink]="['']">
+      <mat-icon
+        class="back-icon"
+        aria-hidden="false"
+        fontIcon="arrow_back"
+      ></mat-icon> </a
+  ></mat-card>
+  <mat-card class="image-container">
+    <!-- <img
+      src="../../assets/images/logo.png"
+      alt="PALERMO SA Logo"
+      style="max-width: 11%; min-width: 11%"
+    /> -->
+    <img
+      mat-card-image
+      src="../../assets/images/logo.png"
+      alt="PALERMO SA Logo"
+    />
+  </mat-card>
   <!-- <a [routerLink]="['login']">Login</a> -->
-  <a [routerLink]="['login']">
-    <mat-icon
-      class="login-icon"
-      aria-hidden="false"
-      fontIcon="login"
-    ></mat-icon>
-  </a>
+  <mat-card class="login-button-container">
+    <a [routerLink]="['login']">
+      <mat-icon
+        class="login-icon"
+        aria-hidden="false"
+        fontIcon="login"
+      ></mat-icon>
+    </a>
+  </mat-card>
 </mat-toolbar>
