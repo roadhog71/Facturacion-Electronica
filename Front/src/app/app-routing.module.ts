@@ -4,9 +4,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { InvoiceDownloaderComponent } from './invoice-downloader/invoice-downloader.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
   },
 
@@ -14,9 +15,14 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
+
   {
-    path: 'invoice-downloader',
+    path: 'home/invoice-downloader',
     component: InvoiceDownloaderComponent,
+  },
+  {
+    path: 'home/sign-in',
+    component: SignInComponent,
   },
 ];
 

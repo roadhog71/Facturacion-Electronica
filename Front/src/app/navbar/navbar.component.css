@@ -11,10 +11,14 @@
   box-shadow: none;
 }
 
+.mat-flat-button {
+  background-color: transparent;
+}
+
 img {
-  object-fit: cover; /*this makes the image in src fit to the size specified below*/
-  width: 50%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
-  height: 10%;
+  object-fit: cover;
+  width: 60%;
+  height: 90%;
 }
 
 .back-button-container {

@@ -19,6 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BackButtonComponent } from './back-button/back-button.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { BackButtonComponent } from './back-button/back-button.component';
     HomeComponent,
     InvoiceDownloaderComponent,
     BackButtonComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,

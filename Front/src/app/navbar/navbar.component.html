@@ -7,16 +7,9 @@
 <mat-toolbar>
   <back-button> </back-button>
   <mat-card class="image-container">
-    <!-- <img
-      src="../../assets/images/logo.png"
-      alt="PALERMO SA Logo"
-      style="max-width: 11%; min-width: 11%"
-    /> -->
-    <img
-      mat-card-image
-      src="../../assets/images/logo.png"
-      alt="PALERMO SA Logo"
-    />
+    <a mat-flat-button [routerLink]="['home']" target="">
+      <img src="../../assets/images/logo.png" alt="PALERMO SA Logo"
+    /></a>
   </mat-card>
   <!-- <a [routerLink]="['login']">Login</a> -->
   <mat-card class="login-button-container">
