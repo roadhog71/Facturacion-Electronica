@@ -34,3 +34,7 @@ img {
   background-color: transparent;
   box-shadow: none;
 }
+
+.back-button-container {
+  color: white;
+}
