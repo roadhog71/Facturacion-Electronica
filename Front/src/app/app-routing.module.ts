@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { InvoiceDownloaderComponent } from './invoice-downloader/invoice-downloader.component';
-import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 const routes: Routes = [
   {
     path: 'home',
@@ -21,8 +21,8 @@ const routes: Routes = [
     component: InvoiceDownloaderComponent,
   },
   {
-    path: 'home/sign-in',
-    component: SignInComponent,
+    path: 'home/sign-up',
+    component: SignUpComponent,
   },
 ];
 
