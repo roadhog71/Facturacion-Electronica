@@ -23,7 +23,8 @@ img {
 
 .back-button-container {
   background-color: transparent;
-  box-shadow: none;
+  color: white;
+  /* box-shadow: none; */
 }
 
 .back-icon {
@@ -39,6 +40,6 @@ img {
   box-shadow: none;
 }
 
-.back-button-container {
-  color: white;
+.mat-stroked-button {
+  box-shadow: none;
 }

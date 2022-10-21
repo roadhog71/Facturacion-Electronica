@@ -1,0 +1,18 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.head-container {
+  width: 100%;
+}
+
+.mandatory-text {
+  color: red;
+}
+
+.fields-container {
+  margin-top: 10px;
+  width: 100%;
+}
