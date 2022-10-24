@@ -1,7 +1,9 @@
 <mat-card class="main-container">
   <mat-card class="head-container">
     <h1>Registrate</h1>
-    <p class="mandatory-text">*Obligatorio</p>
+    <div>
+      <h3 class="mandatory-text">*Obligatorio</h3>
+    </div>
   </mat-card>
   <!-- <mat-card class="fields-container"> -->
   <form
@@ -11,62 +13,32 @@
     [formGroup]="signupForm"
   >
     <mat-card class="column-1">
+      <p>Tipo de documento *</p>
+      <app-select-value></app-select-value>
+      <p>Nombres</p>
       <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Correo electronico</mat-label>
-        <input
-          formControlName="email"
-          matInput
-          placeholder="Enter email address"
-          required
-        />
+        <input formControlName="email" matInput placeholder="" required />
         <mat-error *ngIf="!signupForm.controls['email'].valid">
           Email is required
         </mat-error>
       </mat-form-field>
+      <p>Correo electronico *</p>
       <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Correo electronico</mat-label>
-        <input
-          formControlName="email"
-          matInput
-          placeholder="Enter email address"
-          required
-        />
+        <input formControlName="email" matInput placeholder="" required />
         <mat-error *ngIf="!signupForm.controls['email'].valid">
           Email is required
         </mat-error>
       </mat-form-field>
+      <p>Codigo de cliente *</p>
       <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Correo electronico</mat-label>
-        <input
-          formControlName="email"
-          matInput
-          placeholder="Enter email address"
-          required
-        />
+        <input formControlName="email" matInput placeholder="" required />
         <mat-error *ngIf="!signupForm.controls['email'].valid">
           Email is required
         </mat-error>
       </mat-form-field>
+      <p>Contrasenha *</p>
       <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Correo electronico</mat-label>
-        <input
-          formControlName="email"
-          matInput
-          placeholder="Enter email address"
-          required
-        />
-        <mat-error *ngIf="!signupForm.controls['email'].valid">
-          Email is required
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Correo electronico</mat-label>
-        <input
-          formControlName="email"
-          matInput
-          placeholder="Enter email address"
-          required
-        />
+        <input formControlName="email" matInput placeholder="" required />
         <mat-error *ngIf="!signupForm.controls['email'].valid">
           Email is required
         </mat-error>
@@ -74,8 +46,15 @@
     </mat-card>
 
     <mat-card class="column-2">
+      <p>Numero de documento *</p>
       <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Correo electronico</mat-label>
+        <input formControlName="email" matInput placeholder="" required />
+        <mat-error *ngIf="!signupForm.controls['email'].valid">
+          Email is required
+        </mat-error>
+      </mat-form-field>
+      <p>Apellidos *</p>
+      <mat-form-field class="full-width" appearance="outline">
         <input
           formControlName="email"
           matInput
@@ -86,44 +65,22 @@
           Email is required
         </mat-error>
       </mat-form-field>
+      <p>Celular</p>
       <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Correo electronico</mat-label>
-        <input
-          formControlName="email"
-          matInput
-          placeholder="Enter email address"
-          required
-        />
+        <input formControlName="email" matInput placeholder="" required />
         <mat-error *ngIf="!signupForm.controls['email'].valid">
           Email is required
         </mat-error>
       </mat-form-field>
+      <p>Nombre comercial</p>
       <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Correo electronico</mat-label>
-        <input
-          formControlName="email"
-          matInput
-          placeholder="Enter email address"
-          required
-        />
+        <input formControlName="email" matInput placeholder="" required />
         <mat-error *ngIf="!signupForm.controls['email'].valid">
           Email is required
         </mat-error>
       </mat-form-field>
+      <p>Confirmar contrasenha *</p>
       <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Correo electronico</mat-label>
-        <input
-          formControlName="email"
-          matInput
-          placeholder="Enter email address"
-          required
-        />
-        <mat-error *ngIf="!signupForm.controls['email'].valid">
-          Email is required
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field class="full-width" appearance="outline">
-        <mat-label>Contrasenha</mat-label>
         <input
           formControlName="password"
           matInput
@@ -140,12 +97,14 @@
   <div class="flex-container-signup-bottom">
     <div><button class="purplebutton">Registrarse</button></div>
     <div class="flex-container-p">
-      Al hacer click en "Registrarse" aceptas nuestra
+      <p class="initial-text">
+        Al hacer click en "Registrarse" aceptas nuestra
+      </p>
       <a href="">Politica de Privacidad</a>
     </div>
     <div>
-      ¿Ya tenes una cuenta?
-      <a href="">¿Iniciar sesion?</a>
+      <p class="initial-text">¿Ya tenes una cuenta?</p>
+      <p><a href="">Iniciar sesion</a></p>
     </div>
   </div>
   <!-- </mat-card> -->

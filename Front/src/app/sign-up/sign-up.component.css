@@ -5,7 +5,11 @@
 }
 
 .head-container {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .mandatory-text {
@@ -21,16 +25,22 @@
 
 .fields-container {
   display: flex;
+  justify-content: center;
+  box-shadow: none;
 }
 
 .column-1 {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  box-shadow: none;
 }
 
 .column-2 {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  box-shadow: none;
 }
 
 .flex-container-signup-bottom {
@@ -57,4 +67,8 @@
 .flex-container-signup-bottom > div {
   display: flex;
   justify-content: center;
+}
+
+.initial-text {
+  margin-right: 8px;
 }

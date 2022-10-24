@@ -20,6 +20,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BackButtonComponent } from './back-button/back-button.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { SelectValueComponent } from './select-value/select-value.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     InvoiceDownloaderComponent,
     BackButtonComponent,
     SignUpComponent,
+    SelectValueComponent,
   ],
   imports: [
     BrowserModule,
