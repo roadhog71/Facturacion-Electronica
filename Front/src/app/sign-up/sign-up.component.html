@@ -13,7 +13,7 @@
     [formGroup]="signupForm"
   >
     <mat-card class="column-1">
-      <p>Tipo de documento *</p>
+      <p>Tipo de documento <FONT COLOR="#FF0000">*</FONT></p>
       <app-select-value></app-select-value>
       <p>Nombres *</p>
       <mat-form-field class="full-width" appearance="outline">
@@ -22,21 +22,21 @@
           Nombre es requerido
         </mat-error>
       </mat-form-field>
-      <p>Correo electronico *</p>
+      <p>Correo electronico <FONT COLOR="#FF0000">*</FONT></p>
       <mat-form-field class="full-width" appearance="outline">
         <input formControlName="email" matInput placeholder="" required />
         <mat-error *ngIf="!signupForm.controls['email'].valid">
           Correo electronico es requerido
         </mat-error>
       </mat-form-field>
-      <p>Codigo de cliente *</p>
+      <p>Codigo de cliente <FONT COLOR="#FF0000">*</FONT></p>
       <mat-form-field class="full-width" appearance="outline">
         <input formControlName="code" matInput placeholder="" required />
         <mat-error *ngIf="!signupForm.controls['code'].valid">
-          Codigo es requerido
+          Codigo de cliente requerido
         </mat-error>
       </mat-form-field>
-      <p>Contrasenha *</p>
+      <p>Contrasenha <FONT COLOR="#FF0000">*</FONT></p>
       <mat-form-field class="full-width" appearance="outline">
         <input formControlName="password" matInput placeholder="" required />
         <mat-error *ngIf="!signupForm.controls['password'].valid">
@@ -46,18 +46,18 @@
     </mat-card>
 
     <mat-card class="column-2">
-      <p>Numero de documento *</p>
+      <p>Numero de documento <FONT COLOR="#FF0000">*</FONT></p>
       <mat-form-field class="full-width" appearance="outline">
         <input formControlName="id" matInput placeholder="" required />
         <mat-error *ngIf="!signupForm.controls['id'].valid">
           Numero de documento es requerido
         </mat-error>
       </mat-form-field>
-      <p>Apellidos *</p>
+      <p>Apellidos <FONT COLOR="#FF0000">*</FONT></p>
       <mat-form-field class="full-width" appearance="outline">
         <input formControlName="lastName" matInput placeholder="" required />
         <mat-error *ngIf="!signupForm.controls['lastName'].valid">
-          Email is required
+          Apellido es requerido
         </mat-error>
       </mat-form-field>
       <p>Celular</p>
@@ -76,7 +76,7 @@
         <mat-error *ngIf="!signupForm.controls['businessName'].valid">
         </mat-error>
       </mat-form-field>
-      <p>Confirmar contrasenha *</p>
+      <p>Confirmar contrasenha <FONT COLOR="#FF0000">*</FONT></p>
       <mat-form-field class="full-width" appearance="outline">
         <input
           formControlName="passwordVal"
@@ -84,9 +84,9 @@
           [type]="hide ? 'passwordVal' : 'text'"
           required
         />
-        <!-- <mat-error *ngIf="!signupForm.controls['password'].valid">
-                Contrasenha es requerida
-              </mat-error> -->
+        <mat-error *ngIf="!signupForm.controls['password'].valid">
+          Confirmacion de Contrasenha es requerida
+        </mat-error>
       </mat-form-field>
     </mat-card>
   </form>
@@ -101,7 +101,7 @@
     </div>
     <div>
       <p class="initial-text">¿Ya tenes una cuenta?</p>
-      <a [routerLink]="['login']"> Iniciar Sesion</a>
+      <a [routerLink]="['/login']"> Iniciar Sesion</a>
     </div>
   </div>
   <!-- </mat-card> -->
