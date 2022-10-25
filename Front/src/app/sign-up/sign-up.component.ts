@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { MatSelectModule } from '@angular/material/select';
 
 interface Food {
   value: string;
@@ -19,6 +18,13 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {}
   signupForm: FormGroup = this.fb.group({
+    name: [''],
+    code: [''],
+    id: [''],
+    lastName: [''],
+    cellphone: [''],
+    businessName: [''],
+    passwordVal: [''],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
   });

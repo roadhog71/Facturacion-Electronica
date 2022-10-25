@@ -15,32 +15,32 @@
     <mat-card class="column-1">
       <p>Tipo de documento *</p>
       <app-select-value></app-select-value>
-      <p>Nombres</p>
+      <p>Nombres *</p>
       <mat-form-field class="full-width" appearance="outline">
-        <input formControlName="email" matInput placeholder="" required />
-        <mat-error *ngIf="!signupForm.controls['email'].valid">
-          Email is required
+        <input formControlName="name" matInput placeholder="" required />
+        <mat-error *ngIf="!signupForm.controls['name'].valid">
+          Nombre es requerido
         </mat-error>
       </mat-form-field>
       <p>Correo electronico *</p>
       <mat-form-field class="full-width" appearance="outline">
         <input formControlName="email" matInput placeholder="" required />
         <mat-error *ngIf="!signupForm.controls['email'].valid">
-          Email is required
+          Correo electronico es requerido
         </mat-error>
       </mat-form-field>
       <p>Codigo de cliente *</p>
       <mat-form-field class="full-width" appearance="outline">
-        <input formControlName="email" matInput placeholder="" required />
-        <mat-error *ngIf="!signupForm.controls['email'].valid">
-          Email is required
+        <input formControlName="code" matInput placeholder="" required />
+        <mat-error *ngIf="!signupForm.controls['code'].valid">
+          Codigo es requerido
         </mat-error>
       </mat-form-field>
       <p>Contrasenha *</p>
       <mat-form-field class="full-width" appearance="outline">
-        <input formControlName="email" matInput placeholder="" required />
-        <mat-error *ngIf="!signupForm.controls['email'].valid">
-          Email is required
+        <input formControlName="password" matInput placeholder="" required />
+        <mat-error *ngIf="!signupForm.controls['password'].valid">
+          Contrasenha es requerida
         </mat-error>
       </mat-form-field>
     </mat-card>
@@ -48,43 +48,40 @@
     <mat-card class="column-2">
       <p>Numero de documento *</p>
       <mat-form-field class="full-width" appearance="outline">
-        <input formControlName="email" matInput placeholder="" required />
-        <mat-error *ngIf="!signupForm.controls['email'].valid">
-          Email is required
+        <input formControlName="id" matInput placeholder="" required />
+        <mat-error *ngIf="!signupForm.controls['id'].valid">
+          Numero de documento es requerido
         </mat-error>
       </mat-form-field>
       <p>Apellidos *</p>
       <mat-form-field class="full-width" appearance="outline">
-        <input
-          formControlName="email"
-          matInput
-          placeholder="Enter email address"
-          required
-        />
-        <mat-error *ngIf="!signupForm.controls['email'].valid">
+        <input formControlName="lastName" matInput placeholder="" required />
+        <mat-error *ngIf="!signupForm.controls['lastName'].valid">
           Email is required
         </mat-error>
       </mat-form-field>
       <p>Celular</p>
       <mat-form-field class="full-width" appearance="outline">
-        <input formControlName="email" matInput placeholder="" required />
-        <mat-error *ngIf="!signupForm.controls['email'].valid">
-          Email is required
-        </mat-error>
+        <input formControlName="cellphone" matInput placeholder="" required />
+        <mat-error *ngIf="!signupForm.controls['cellphone'].valid"> </mat-error>
       </mat-form-field>
       <p>Nombre comercial</p>
       <mat-form-field class="full-width" appearance="outline">
-        <input formControlName="email" matInput placeholder="" required />
-        <mat-error *ngIf="!signupForm.controls['email'].valid">
-          Email is required
+        <input
+          formControlName="businessName"
+          matInput
+          placeholder=""
+          required
+        />
+        <mat-error *ngIf="!signupForm.controls['businessName'].valid">
         </mat-error>
       </mat-form-field>
       <p>Confirmar contrasenha *</p>
       <mat-form-field class="full-width" appearance="outline">
         <input
-          formControlName="password"
+          formControlName="passwordVal"
           matInput
-          [type]="hide ? 'password' : 'text'"
+          [type]="hide ? 'passwordVal' : 'text'"
           required
         />
         <!-- <mat-error *ngIf="!signupForm.controls['password'].valid">
@@ -104,7 +101,7 @@
     </div>
     <div>
       <p class="initial-text">¿Ya tenes una cuenta?</p>
-      <p><a href="">Iniciar sesion</a></p>
+      <a [routerLink]="['login']"> Iniciar Sesion</a>
     </div>
   </div>
   <!-- </mat-card> -->
