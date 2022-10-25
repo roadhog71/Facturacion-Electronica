@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { InvoiceDownloaderComponent } from './invoice-downloader/invoice-downloader.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { InvoiceTableComponent } from './invoice-table/invoice-table.component';
 const routes: Routes = [
   {
     path: 'home',
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'home/sign-up',
     component: SignUpComponent,
+  },
+  {
+    path: 'home/invoice-table',
+    component: InvoiceTableComponent,
   },
 ];
 

@@ -1,0 +1,15 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+  flex-direction: column;
+}
+
+.settings-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(120, 247, 187);
+  width: 100%;
+}

@@ -21,6 +21,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BackButtonComponent } from './back-button/back-button.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SelectValueComponent } from './select-value/select-value.component';
+import { InvoiceTableComponent } from './invoice-table/invoice-table.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { DateRangePickerComponent } from './date-range-picker/date-range-picker.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,8 @@ import { SelectValueComponent } from './select-value/select-value.component';
     BackButtonComponent,
     SignUpComponent,
     SelectValueComponent,
+    InvoiceTableComponent,
+    DateRangePickerComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +51,7 @@ import { SelectValueComponent } from './select-value/select-value.component';
     MatSelectModule,
     MatTooltipModule,
     MatSlideToggleModule,
+    MatDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
