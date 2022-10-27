@@ -1,6 +1,6 @@
+// Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,22 +8,29 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { InvoiceDownloaderComponent } from './invoice-downloader/invoice-downloader.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+
+// Components
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { InvoiceDownloaderComponent } from './invoice-downloader/invoice-downloader.component';
 import { BackButtonComponent } from './back-button/back-button.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SelectValueComponent } from './select-value/select-value.component';
 import { InvoiceTableComponent } from './invoice-table/invoice-table.component';
-import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DateRangePickerComponent } from './date-range-picker/date-range-picker.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +44,7 @@ import { DateRangePickerComponent } from './date-range-picker/date-range-picker.
     SelectValueComponent,
     InvoiceTableComponent,
     DateRangePickerComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +60,11 @@ import { DateRangePickerComponent } from './date-range-picker/date-range-picker.
     MatTooltipModule,
     MatSlideToggleModule,
     MatDatepickerModule,
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

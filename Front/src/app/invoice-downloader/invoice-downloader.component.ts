@@ -7,6 +7,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./invoice-downloader.component.css'],
 })
 export class InvoiceDownloaderComponent implements OnInit {
+  isChecked = true;
   hide: boolean = false;
 
   constructor(private fb: FormBuilder) {}
