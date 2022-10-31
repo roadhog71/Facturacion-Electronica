@@ -1,3 +1,9 @@
 table {
   width: 100%;
 }
+
+th {
+  color: white;
+  font-size: medium;
+  background-color: #673ab7;
+}

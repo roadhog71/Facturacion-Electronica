@@ -1,15 +1,20 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { CustomPaginator } from './CustomPaginatorConfiguration';
+import { MatPaginatorIntl } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
+  providers: [
+    { provide: MatPaginatorIntl, useValue: CustomPaginator() }, // Here
+  ],
 })
 export class TableComponent implements AfterViewInit {
   displayedColumns: string[] = ['number', 'date', 'total', 'action'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSource = new MatTableDataSource<TableTest>(TABLE_DATA);
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -19,32 +24,32 @@ export class TableComponent implements AfterViewInit {
   }
 }
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+export interface TableTest {
+  number: number;
+  date: string;
+  total: number;
+  actions: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-  { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-  { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-  { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-  { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-  { position: 11, name: 'Sodium', weight: 22.9897, symbol: 'Na' },
-  { position: 12, name: 'Magnesium', weight: 24.305, symbol: 'Mg' },
-  { position: 13, name: 'Aluminum', weight: 26.9815, symbol: 'Al' },
-  { position: 14, name: 'Silicon', weight: 28.0855, symbol: 'Si' },
-  { position: 15, name: 'Phosphorus', weight: 30.9738, symbol: 'P' },
-  { position: 16, name: 'Sulfur', weight: 32.065, symbol: 'S' },
-  { position: 17, name: 'Chlorine', weight: 35.453, symbol: 'Cl' },
-  { position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar' },
-  { position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K' },
-  { position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca' },
+const TABLE_DATA: TableTest[] = [
+  { number: 1, date: '', total: 1.0079, actions: '' },
+  { number: 2, date: '', total: 4.0026, actions: '' },
+  { number: 3, date: '', total: 6.941, actions: '' },
+  { number: 4, date: '', total: 9.0122, actions: '' },
+  { number: 5, date: '', total: 10.811, actions: '' },
+  { number: 6, date: '', total: 12.0107, actions: '' },
+  { number: 7, date: '', total: 14.0067, actions: '' },
+  { number: 8, date: '', total: 15.9994, actions: '' },
+  { number: 9, date: '', total: 18.9984, actions: '' },
+  { number: 10, date: '', total: 20.1797, actions: '' },
+  { number: 11, date: '', total: 22.9897, actions: '' },
+  { number: 12, date: '', total: 24.305, actions: '' },
+  { number: 13, date: '', total: 26.9815, actions: '' },
+  { number: 14, date: '', total: 28.0855, actions: '' },
+  { number: 15, date: '', total: 30.9738, actions: '' },
+  { number: 16, date: '', total: 32.065, actions: '' },
+  { number: 17, date: '', total: 35.453, actions: '' },
+  { number: 18, date: '', total: 39.948, actions: '' },
+  { number: 19, date: '', total: 39.0983, actions: '' },
+  { number: 20, date: '', total: 40.078, actions: '' },
 ];

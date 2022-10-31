@@ -9,10 +9,9 @@
 .settings-buttons {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: start;
   width: 100%;
   box-shadow: none;
-  flex-wrap: wrap;
 }
 
 .table-container {
