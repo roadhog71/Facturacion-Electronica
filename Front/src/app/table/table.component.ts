@@ -3,6 +3,39 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { CustomPaginator } from './CustomPaginatorConfiguration';
 import { MatPaginatorIntl } from '@angular/material/paginator';
+import { SelectionModel } from '@angular/cdk/collections';
+import { ThemePalette } from '@angular/material/core';
+
+export interface Task {
+  name: string;
+  completed: boolean;
+  color: ThemePalette;
+  subtasks?: Task[];
+}
+
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
+}
+
+const ELEMENT_DATA: PeriodicElement[] = [
+  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
+  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
+  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
+  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
+  { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
+  { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
+  { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
+  { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
+  { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
+  { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
+];
+
+/**
+ * @title Table with selection
+ */
 
 @Component({
   selector: 'app-table',
@@ -13,8 +46,78 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
   ],
 })
 export class TableComponent implements AfterViewInit {
-  displayedColumns: string[] = ['number', 'date', 'total', 'action'];
-  dataSource = new MatTableDataSource<TableTest>(TABLE_DATA);
+  task: Task = {
+    name: 'Seleccione el formato para descargar su factura',
+    completed: false,
+    color: 'accent',
+    subtasks: [
+      { name: 'XML', completed: false, color: 'primary' },
+      { name: 'PDF', completed: false, color: 'warn' },
+    ],
+  };
+
+  allComplete: boolean = false;
+
+  updateAllComplete() {
+    this.allComplete =
+      this.task.subtasks != null &&
+      this.task.subtasks.every((t) => t.completed);
+  }
+
+  someComplete(): boolean {
+    if (this.task.subtasks == null) {
+      return false;
+    }
+    return (
+      this.task.subtasks.filter((t) => t.completed).length > 0 &&
+      !this.allComplete
+    );
+  }
+
+  setAll(completed: boolean) {
+    this.allComplete = completed;
+    if (this.task.subtasks == null) {
+      return;
+    }
+    this.task.subtasks.forEach((t) => (t.completed = completed));
+  }
+
+  displayedColumns: string[] = [
+    'select',
+    'position',
+    'name',
+    'weight',
+    'symbol',
+  ];
+  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  selection = new SelectionModel<PeriodicElement>(true, []);
+
+  /** Whether the number of selected elements matches the total number of rows. */
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
+
+  /** Selects all rows if they are not all selected; otherwise clear selection. */
+  toggleAllRows() {
+    if (this.isAllSelected()) {
+      this.selection.clear();
+      return;
+    }
+
+    this.selection.select(...this.dataSource.data);
+  }
+
+  /** The label for the checkbox on the passed row */
+  checkboxLabel(row?: PeriodicElement): string {
+    if (!row) {
+      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
+    }
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${
+      row.position + 1
+    }`;
+  }
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -23,33 +126,3 @@ export class TableComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 }
-
-export interface TableTest {
-  number: number;
-  date: string;
-  total: number;
-  actions: string;
-}
-
-const TABLE_DATA: TableTest[] = [
-  { number: 1, date: '', total: 1.0079, actions: '' },
-  { number: 2, date: '', total: 4.0026, actions: '' },
-  { number: 3, date: '', total: 6.941, actions: '' },
-  { number: 4, date: '', total: 9.0122, actions: '' },
-  { number: 5, date: '', total: 10.811, actions: '' },
-  { number: 6, date: '', total: 12.0107, actions: '' },
-  { number: 7, date: '', total: 14.0067, actions: '' },
-  { number: 8, date: '', total: 15.9994, actions: '' },
-  { number: 9, date: '', total: 18.9984, actions: '' },
-  { number: 10, date: '', total: 20.1797, actions: '' },
-  { number: 11, date: '', total: 22.9897, actions: '' },
-  { number: 12, date: '', total: 24.305, actions: '' },
-  { number: 13, date: '', total: 26.9815, actions: '' },
-  { number: 14, date: '', total: 28.0855, actions: '' },
-  { number: 15, date: '', total: 30.9738, actions: '' },
-  { number: 16, date: '', total: 32.065, actions: '' },
-  { number: 17, date: '', total: 35.453, actions: '' },
-  { number: 18, date: '', total: 39.948, actions: '' },
-  { number: 19, date: '', total: 39.0983, actions: '' },
-  { number: 20, date: '', total: 40.078, actions: '' },
-];

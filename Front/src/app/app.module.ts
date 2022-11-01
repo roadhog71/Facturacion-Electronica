@@ -20,6 +20,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 // Components
 import { LoginComponent } from './login/login.component';
@@ -65,6 +66,7 @@ import { TableComponent } from './table/table.component';
     MatPaginatorModule,
     MatFormFieldModule,
     MatNativeDateModule,
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
