@@ -9,7 +9,7 @@ import { InvoiceTableComponent } from './invoice-table/invoice-table.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'home/login', component: LoginComponent },
   { path: 'home/invoice-downloader', component: InvoiceDownloaderComponent },
   { path: 'home/sign-up', component: SignUpComponent },
   { path: 'home/invoice-table', component: InvoiceTableComponent },

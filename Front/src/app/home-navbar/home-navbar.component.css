@@ -1,0 +1,45 @@
+.mat-toolbar {
+  background: rgb(72, 73, 74);
+  color: #fff;
+  justify-content: space-between;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.mat-flat-button {
+  background-color: transparent;
+}
+
+img {
+  object-fit: cover;
+  width: 60%;
+  height: 90%;
+}
+
+.back-button-container {
+  background-color: transparent;
+  color: white;
+  /* box-shadow: none; */
+}
+
+.back-icon {
+  color: #fff;
+}
+
+.login-icon {
+  color: #fff;
+}
+
+.login-button-container {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.mat-stroked-button {
+  box-shadow: none;
+}

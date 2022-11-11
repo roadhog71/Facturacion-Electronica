@@ -1,3 +1,6 @@
+<nav>
+  <app-navbar></app-navbar>
+</nav>
 <mat-card class="container-card">
   <mat-card class="invoice-card">
     <h1>Descarga tu factura</h1>
@@ -6,9 +9,11 @@
       intentarlo más tarde. El proceso de validación podría demorarse cómo
       máximo 72 Hs.
     </p>
-    <mat-slide-toggle [(ngModel)]="isChecked">{{
-      isChecked ? "A4" : "Ticket"
-    }}</mat-slide-toggle>
+    <mat-card class="toggle">
+      <mat-slide-toggle [(ngModel)]="isChecked">{{
+        isChecked ? "A4" : "Ticket"
+      }}</mat-slide-toggle>
+    </mat-card>
     <mat-card class="slide-toggle-container">
       <img
         mat-card-image

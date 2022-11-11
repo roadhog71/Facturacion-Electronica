@@ -32,6 +32,7 @@ import { SelectValueComponent } from './select-value/select-value.component';
 import { InvoiceTableComponent } from './invoice-table/invoice-table.component';
 import { DateRangePickerComponent } from './date-range-picker/date-range-picker.component';
 import { TableComponent } from './table/table.component';
+import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { TableComponent } from './table/table.component';
     InvoiceTableComponent,
     DateRangePickerComponent,
     TableComponent,
+    HomeNavbarComponent,
   ],
   imports: [
     BrowserModule,
