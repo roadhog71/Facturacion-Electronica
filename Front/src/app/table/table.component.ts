@@ -46,7 +46,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class TableComponent implements AfterViewInit {
   task: Task = {
-    date: 'Seleccione el formato para descargar su factura',
+    date: 'Seleccione un formato',
     completed: false,
     color: 'accent',
     subtasks: [

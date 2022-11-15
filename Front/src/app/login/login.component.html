@@ -49,15 +49,17 @@
           </mat-error>
         </mat-form-field>
       </div>
-      <button class="purplebutton">Iniciar Sesion</button>
     </form>
-
-    <a class="text-link" class="aLink" routerLink="/auth/forgot-password"
-      >¿Olvidaste tu contrasenha?</a
-    >
-
-    <button class="white-button">
-      <p>Crear cuenta</p>
-    </button>
+    <mat-card class="bottom-container"
+      ><button class="purplebutton">Iniciar Sesion</button>
+      <div>
+        <a class="text-link" class="aLink" routerLink="/auth/forgot-password"
+          >¿Olvidaste tu contrasenha?</a
+        >
+      </div>
+      <button class="white-button" [routerLink]="['/home/login/sign-up']">
+        Crear cuenta
+      </button>
+    </mat-card>
   </mat-card-content>
 </mat-card>

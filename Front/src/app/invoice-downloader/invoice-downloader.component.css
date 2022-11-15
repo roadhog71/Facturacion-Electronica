@@ -4,6 +4,7 @@
   justify-content: center;
   border: none;
   box-shadow: none;
+  flex-wrap: wrap;
 }
 
 .invoice-card {
@@ -25,6 +26,7 @@
   flex-direction: column;
   align-items: center;
   /* box-shadow: none; */
+  height: 100%;
 }
 
 .credential-title {

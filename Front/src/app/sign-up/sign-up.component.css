@@ -1,7 +1,14 @@
 .main-container {
   display: flex;
+  justify-content: center;
+}
+
+.large-container {
+  display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 50%;
+  flex-wrap: wrap;
 }
 
 .head-container {
@@ -16,17 +23,10 @@
   color: red;
 }
 
-/* .fields-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-  width: 100%;
-} */
-
 .fields-container {
   display: flex;
   justify-content: center;
-  box-shadow: none;
+  /* box-shadow: none; */
 }
 
 .column-1 {

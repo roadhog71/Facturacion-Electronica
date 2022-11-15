@@ -21,6 +21,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { RouterModule } from '@angular/router';
 
 // Components
 import { LoginComponent } from './login/login.component';
@@ -69,6 +70,7 @@ import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
     MatFormFieldModule,
     MatNativeDateModule,
     MatCheckboxModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

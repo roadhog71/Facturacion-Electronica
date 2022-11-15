@@ -4,6 +4,9 @@ mat-card {
   text-align: center;
   max-height: 600px;
 }
+.bottom-container {
+  box-shadow: none;
+}
 
 .header {
   text-align: center;
@@ -89,26 +92,25 @@ mat-card {
   border-radius: 100px;
   margin-bottom: 30px;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .white-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px, 24px, 10px, 24px;
   border-radius: 30px;
   color: #673ab7;
+  background-color: #673ab7;
   border-color: #673ab7;
-  border-width: 1px;
   font-size: 15px;
+  padding: 10px, 24px, 10px, 24px;
+  justify-content: center;
+  align-items: center;
   width: 244px;
   height: 44px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 100px;
-  margin-bottom: 50px;
-  margin-left: 180px;
-  margin-right: 180px;
-  margin-top: 40px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  cursor: pointer;
 }
 
 a:link {

@@ -2,110 +2,113 @@
   <app-navbar></app-navbar>
 </nav>
 <mat-card class="main-container">
-  <mat-card class="head-container">
-    <h1>Registrate</h1>
-    <div>
-      <h3 class="mandatory-text">*Obligatorio</h3>
+  <mat-card class="large-container">
+    <mat-card class="head-container">
+      <h1>Registrate</h1>
+      <div>
+        <h3 class="mandatory-text">*Obligatorio</h3>
+      </div>
+    </mat-card>
+    <!-- <mat-card class="fields-container"> -->
+    <form
+      class="fields-container"
+      (ngSubmit)="onLogin()"
+      name="signupForm"
+      [formGroup]="signupForm"
+    >
+      <mat-card class="column-1">
+        <p>Tipo de documento <FONT COLOR="#FF0000">*</FONT></p>
+        <app-select-value></app-select-value>
+        <p>Nombres *</p>
+        <mat-form-field class="full-width" appearance="outline">
+          <input formControlName="name" matInput placeholder="" required />
+          <mat-error *ngIf="!signupForm.controls['name'].valid">
+            Nombre es requerido
+          </mat-error>
+        </mat-form-field>
+        <p>Correo electronico <FONT COLOR="#FF0000">*</FONT></p>
+        <mat-form-field class="full-width" appearance="outline">
+          <input formControlName="email" matInput placeholder="" required />
+          <mat-error *ngIf="!signupForm.controls['email'].valid">
+            Correo electronico es requerido
+          </mat-error>
+        </mat-form-field>
+        <p>Codigo de cliente <FONT COLOR="#FF0000">*</FONT></p>
+        <mat-form-field class="full-width" appearance="outline">
+          <input formControlName="code" matInput placeholder="" required />
+          <mat-error *ngIf="!signupForm.controls['code'].valid">
+            Codigo de cliente requerido
+          </mat-error>
+        </mat-form-field>
+        <p>Contrasenha <FONT COLOR="#FF0000">*</FONT></p>
+        <mat-form-field class="full-width" appearance="outline">
+          <input formControlName="password" matInput placeholder="" required />
+          <mat-error *ngIf="!signupForm.controls['password'].valid">
+            Contrasenha es requerida
+          </mat-error>
+        </mat-form-field>
+      </mat-card>
+
+      <mat-card class="column-2">
+        <p>Numero de documento <FONT COLOR="#FF0000">*</FONT></p>
+        <mat-form-field class="full-width" appearance="outline">
+          <input formControlName="id" matInput placeholder="" required />
+          <mat-error *ngIf="!signupForm.controls['id'].valid">
+            Numero de documento es requerido
+          </mat-error>
+        </mat-form-field>
+        <p>Apellidos <FONT COLOR="#FF0000">*</FONT></p>
+        <mat-form-field class="full-width" appearance="outline">
+          <input formControlName="lastName" matInput placeholder="" required />
+          <mat-error *ngIf="!signupForm.controls['lastName'].valid">
+            Apellido es requerido
+          </mat-error>
+        </mat-form-field>
+        <p>Celular</p>
+        <mat-form-field class="full-width" appearance="outline">
+          <input formControlName="cellphone" matInput placeholder="" required />
+          <mat-error *ngIf="!signupForm.controls['cellphone'].valid">
+          </mat-error>
+        </mat-form-field>
+        <p>Nombre comercial</p>
+        <mat-form-field class="full-width" appearance="outline">
+          <input
+            formControlName="businessName"
+            matInput
+            placeholder=""
+            required
+          />
+          <mat-error *ngIf="!signupForm.controls['businessName'].valid">
+          </mat-error>
+        </mat-form-field>
+        <p>Confirmar contrasenha <FONT COLOR="#FF0000">*</FONT></p>
+        <mat-form-field class="full-width" appearance="outline">
+          <input
+            formControlName="passwordVal"
+            matInput
+            [type]="hide ? 'passwordVal' : 'text'"
+            required
+          />
+          <mat-error *ngIf="!signupForm.controls['password'].valid">
+            Confirmacion de Contrasenha es requerida
+          </mat-error>
+        </mat-form-field>
+      </mat-card>
+    </form>
+
+    <div class="flex-container-signup-bottom">
+      <div><button class="purplebutton">Registrarse</button></div>
+      <div class="flex-container-p">
+        <p class="initial-text">
+          Al hacer click en "Registrarse" aceptas nuestra
+        </p>
+        <a href="">Politica de Privacidad</a>
+      </div>
+      <div>
+        <p class="initial-text">¿Ya tenes una cuenta?</p>
+        <a [routerLink]="['/home/sign-up/login']"> Iniciar Sesion</a>
+      </div>
     </div>
+    <!-- </mat-card> -->
   </mat-card>
-  <!-- <mat-card class="fields-container"> -->
-  <form
-    class="fields-container"
-    (ngSubmit)="onLogin()"
-    name="signupForm"
-    [formGroup]="signupForm"
-  >
-    <mat-card class="column-1">
-      <p>Tipo de documento <FONT COLOR="#FF0000">*</FONT></p>
-      <app-select-value></app-select-value>
-      <p>Nombres *</p>
-      <mat-form-field class="full-width" appearance="outline">
-        <input formControlName="name" matInput placeholder="" required />
-        <mat-error *ngIf="!signupForm.controls['name'].valid">
-          Nombre es requerido
-        </mat-error>
-      </mat-form-field>
-      <p>Correo electronico <FONT COLOR="#FF0000">*</FONT></p>
-      <mat-form-field class="full-width" appearance="outline">
-        <input formControlName="email" matInput placeholder="" required />
-        <mat-error *ngIf="!signupForm.controls['email'].valid">
-          Correo electronico es requerido
-        </mat-error>
-      </mat-form-field>
-      <p>Codigo de cliente <FONT COLOR="#FF0000">*</FONT></p>
-      <mat-form-field class="full-width" appearance="outline">
-        <input formControlName="code" matInput placeholder="" required />
-        <mat-error *ngIf="!signupForm.controls['code'].valid">
-          Codigo de cliente requerido
-        </mat-error>
-      </mat-form-field>
-      <p>Contrasenha <FONT COLOR="#FF0000">*</FONT></p>
-      <mat-form-field class="full-width" appearance="outline">
-        <input formControlName="password" matInput placeholder="" required />
-        <mat-error *ngIf="!signupForm.controls['password'].valid">
-          Contrasenha es requerida
-        </mat-error>
-      </mat-form-field>
-    </mat-card>
-
-    <mat-card class="column-2">
-      <p>Numero de documento <FONT COLOR="#FF0000">*</FONT></p>
-      <mat-form-field class="full-width" appearance="outline">
-        <input formControlName="id" matInput placeholder="" required />
-        <mat-error *ngIf="!signupForm.controls['id'].valid">
-          Numero de documento es requerido
-        </mat-error>
-      </mat-form-field>
-      <p>Apellidos <FONT COLOR="#FF0000">*</FONT></p>
-      <mat-form-field class="full-width" appearance="outline">
-        <input formControlName="lastName" matInput placeholder="" required />
-        <mat-error *ngIf="!signupForm.controls['lastName'].valid">
-          Apellido es requerido
-        </mat-error>
-      </mat-form-field>
-      <p>Celular</p>
-      <mat-form-field class="full-width" appearance="outline">
-        <input formControlName="cellphone" matInput placeholder="" required />
-        <mat-error *ngIf="!signupForm.controls['cellphone'].valid"> </mat-error>
-      </mat-form-field>
-      <p>Nombre comercial</p>
-      <mat-form-field class="full-width" appearance="outline">
-        <input
-          formControlName="businessName"
-          matInput
-          placeholder=""
-          required
-        />
-        <mat-error *ngIf="!signupForm.controls['businessName'].valid">
-        </mat-error>
-      </mat-form-field>
-      <p>Confirmar contrasenha <FONT COLOR="#FF0000">*</FONT></p>
-      <mat-form-field class="full-width" appearance="outline">
-        <input
-          formControlName="passwordVal"
-          matInput
-          [type]="hide ? 'passwordVal' : 'text'"
-          required
-        />
-        <mat-error *ngIf="!signupForm.controls['password'].valid">
-          Confirmacion de Contrasenha es requerida
-        </mat-error>
-      </mat-form-field>
-    </mat-card>
-  </form>
-
-  <div class="flex-container-signup-bottom">
-    <div><button class="purplebutton">Registrarse</button></div>
-    <div class="flex-container-p">
-      <p class="initial-text">
-        Al hacer click en "Registrarse" aceptas nuestra
-      </p>
-      <a href="">Politica de Privacidad</a>
-    </div>
-    <div>
-      <p class="initial-text">¿Ya tenes una cuenta?</p>
-      <a [routerLink]="['/login']"> Iniciar Sesion</a>
-    </div>
-  </div>
-  <!-- </mat-card> -->
 </mat-card>
