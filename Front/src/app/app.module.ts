@@ -35,6 +35,7 @@ import { InvoiceTableComponent } from './invoice-table/invoice-table.component';
 import { DateRangePickerComponent } from './date-range-picker/date-range-picker.component';
 import { TableComponent } from './table/table.component';
 import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 import { CaptchaComponent } from './captcha/captcha.component';
 
 @NgModule({
@@ -74,7 +75,8 @@ import { CaptchaComponent } from './captcha/captcha.component';
     MatNativeDateModule,
     MatCheckboxModule,
     RouterModule,
-    NgxCaptchaModule,
+    HttpClientModule,
+    NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent],
