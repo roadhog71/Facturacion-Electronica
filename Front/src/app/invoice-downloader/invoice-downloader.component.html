@@ -33,7 +33,7 @@
     <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
       <div class="emailInput">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label> CI o RUC (Sin DV)</mat-label>
+          <mat-label>CDC</mat-label>
           <input
             formControlName="email"
             matInput
@@ -41,7 +41,7 @@
             required
           />
           <mat-error *ngIf="!loginForm.controls['email'].valid">
-            CI o RUC es requerido
+            CDC es requerido
           </mat-error>
         </mat-form-field>
         <!-- <div class="tooltip">
@@ -59,7 +59,7 @@
         </div> -->
       </div>
 
-      <mat-form-field class="full-width" appearance="outline">
+      <!-- <mat-form-field class="full-width" appearance="outline">
         <mat-label>PIN</mat-label>
         <input
           formControlName="password"
@@ -81,7 +81,7 @@
         <mat-error *ngIf="!loginForm.controls['password'].valid">
           PIN es requerido
         </mat-error>
-      </mat-form-field>
+      </mat-form-field> -->
       <div>
         <!-- <mat-form-field appearance="fill">
           <mat-label>Seleccione un formato</mat-label>
@@ -99,9 +99,10 @@
     <a class="info-link" href="https://ekuatia.set.gov.py/consultas/"
       >https://ekuatia.set.gov.py/consultas/</a
     >
-    <p class="create-account-tittle">
+    <!-- <p class="create-account-tittle">
       Crea tu cuenta y accede a tdas tus facturas electronicas
     </p>
     <button class="create-account-button">Crear cuenta</button></mat-card
-  >
+  > -->
+  </mat-card>
 </mat-card>
