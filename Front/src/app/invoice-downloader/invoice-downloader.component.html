@@ -28,7 +28,7 @@
     </mat-card>
   </mat-card>
   <mat-card class="credential-card">
-    <h2>Accede con tu PIN a tu factura electronica</h2>
+    <h2>Accede con tu CDC a tu factura electronica</h2>
 
     <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
       <div class="emailInput">
@@ -37,7 +37,7 @@
           <input
             formControlName="email"
             matInput
-            placeholder="Enter email address"
+            placeholder="Ingrese su CDC"
             required
           />
           <mat-error *ngIf="!loginForm.controls['email'].valid">
