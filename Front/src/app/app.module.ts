@@ -22,6 +22,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { RouterModule } from '@angular/router';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 // Components
 import { LoginComponent } from './login/login.component';
@@ -34,6 +35,7 @@ import { InvoiceTableComponent } from './invoice-table/invoice-table.component';
 import { DateRangePickerComponent } from './date-range-picker/date-range-picker.component';
 import { TableComponent } from './table/table.component';
 import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
+import { CaptchaComponent } from './captcha/captcha.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,7 @@ import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
     DateRangePickerComponent,
     TableComponent,
     HomeNavbarComponent,
+    CaptchaComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +74,7 @@ import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
     MatNativeDateModule,
     MatCheckboxModule,
     RouterModule,
+    NgxCaptchaModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
