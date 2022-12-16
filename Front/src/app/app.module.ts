@@ -36,6 +36,8 @@ import { DateRangePickerComponent } from './date-range-picker/date-range-picker.
 import { TableComponent } from './table/table.component';
 import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FacturaCardComponent } from './factura-card/factura-card.component';
+
 import { CaptchaComponent } from './captcha/captcha.component';
 
 @NgModule({
@@ -52,6 +54,7 @@ import { CaptchaComponent } from './captcha/captcha.component';
     DateRangePickerComponent,
     TableComponent,
     HomeNavbarComponent,
+    FacturaCardComponent,
     CaptchaComponent,
   ],
   imports: [

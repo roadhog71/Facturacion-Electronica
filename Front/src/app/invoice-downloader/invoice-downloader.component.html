@@ -30,7 +30,7 @@
   <mat-card class="credential-card">
     <h2>Accede con tu CDC a tu factura electronica</h2>
 
-    <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+    <form (ngSubmit)="onFind()" name="loginForm" [formGroup]="loginForm">
       <div class="emailInput">
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>CDC</mat-label>
@@ -92,9 +92,7 @@
           </mat-select>
         </mat-form-field> -->
       </div>
-      <div>
-        <button class="download-button">Descargar</button>
-      </div>
+      <div><button type="submit"  class="download-button">Descargar</button></div>
     </form>
     <app-captcha></app-captcha>
     <p class="info-tittle">Mas informacion en:</p>
