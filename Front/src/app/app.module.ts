@@ -35,6 +35,8 @@ import { DateRangePickerComponent } from './date-range-picker/date-range-picker.
 import { TableComponent } from './table/table.component';
 import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FacturaCardComponent } from './factura-card/factura-card.component';
+
 
 @NgModule({
   declarations: [
@@ -50,6 +52,7 @@ import { HttpClientModule } from '@angular/common/http';
     DateRangePickerComponent,
     TableComponent,
     HomeNavbarComponent,
+    FacturaCardComponent,
   ],
   imports: [
     BrowserModule,
