@@ -15,22 +15,23 @@ export class InvoiceDownloaderComponent implements OnInit {
   hide: boolean = false;
   consultaResponse: any;
   cardUrl: any;
-  service: any;
-
+  loginForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              service: EfacturaService,
-              private router: Router) {
-                this.service = service;
+              private router: Router)
+              {
+                this.loginForm = this.fb.group({
+                  email: ['', Validators.required]
+                  //password: ['', [Validators.required, Validators.minLength(6)]],
+                });
               }
 
   ngOnInit(): void {}
-  loginForm: FormGroup = this.fb.group({
-    email: ['', [Validators.required]]
-    //password: ['', [Validators.required, Validators.minLength(6)]],
-  });
 
-  get email() {return this.loginForm?.get('email');}
+
+  get email() {
+    return this.loginForm.get('email');
+  }
 
 
 
@@ -41,30 +42,18 @@ export class InvoiceDownloaderComponent implements OnInit {
       return;
     }
 
+    this.gotoFacturaCard();
 
-    let consultaRequest = { cdc: [this.email?.value],
-                            maximoResultados: 1,
-                            retornarKuDE: true,
-                            retornarXmlFirmado: true
-                          }
-
-    console.log(consultaRequest);
-
-    this.service.findAll(consultaRequest).subscribe((
-      data: any) => {
-        this.consultaResponse = data as ConsultaResponse;
-        console.log(this.consultaResponse);
-        this.gotoFacturaCard();
-      });
   }
 
 
   gotoFacturaCard() {
-    if (this.consultaResponse) {
-      this.cardUrl = 'factura'
-      let consStr = JSON.stringify(this.consultaResponse);
-      this.router.navigate([`${this.cardUrl}`, consStr]);
-    }
+    this.cardUrl = 'factura'
+    //let consStr = JSON.stringify(this.consultaResponse);
+    //this.router.navigate([`${this.cardUrl}`, consStr]);
+    let route = [`${this.cardUrl}/${this.email?.value}`]
+    console.log('route:', route)
+    this.router.navigate([`${this.cardUrl}/${this.email?.value}`]);
   }
 
 
