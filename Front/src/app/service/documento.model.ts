@@ -15,7 +15,7 @@ export interface Documento{
   estadoEnvio: string;
   estadoAnulacion: string;
   secuencia: number;
-  kuDE: any[];
-  xmlFirmado: any[];
+  kuDE: string;
+  xmlFirmado: string;
   documentosError: DocumentoError[];
 }

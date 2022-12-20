@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'home/login', component: LoginComponent },
   { path: 'home/sign-up/login', component: LoginComponent },
   { path: 'home/invoice-downloader', component: InvoiceDownloaderComponent },
-  { path: 'factura/:response', component: FacturaCardComponent},
+  { path: 'factura/:cdc', component: FacturaCardComponent},
 
   { path: 'home/sign-up', component: SignUpComponent },
   { path: 'home/login/sign-up', component: SignUpComponent },
