@@ -1,13 +1,20 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>Documento encontrado</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
 
-    <p>{{consultaResponse | json}}</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button (click)="onClickDownloadPdf()">Descargar pdf</button>
-    <button mat-button (click)="onClickDownloadXml()">Descargar xml</button>
-  </mat-card-actions>
-</mat-card>
+<div class="text-layout">
+  <mat-card class="container-card">
+    <mat-card class="credential-card">
+      <mat-card-header>
+        <mat-card-title>Documento encontrado</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <p>{{consultaResponse | json}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="onClickDownloadPdf()">Descargar pdf</button>
+        <button mat-button (click)="onClickDownloadXml()">Descargar xml</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-card>
+
+</div>
