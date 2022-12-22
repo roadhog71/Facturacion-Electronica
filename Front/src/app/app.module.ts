@@ -36,6 +36,7 @@ import { TableComponent } from './table/table.component';
 import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FacturaCardComponent } from './factura-card/factura-card.component';
+import { PrimengModule } from './primeng/primeng/primeng.module';
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import { FacturaCardComponent } from './factura-card/factura-card.component';
     MatNativeDateModule,
     MatCheckboxModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    PrimengModule
   ],
   providers: [],
   bootstrap: [AppComponent],
