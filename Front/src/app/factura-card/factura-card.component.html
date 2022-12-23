@@ -1,20 +1,44 @@
-
-<div class="text-layout">
+<div class="center-card">
   <mat-card class="container-card">
-    <mat-card class="credential-card">
-      <mat-card-header>
-        <mat-card-title>Documento encontrado</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
+    <mat-card-header>
+      <mat-card-title>Documento encontrado</mat-card-title>
+    </mat-card-header>
 
-        <p>{{consultaResponse | json}}</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button (click)="onClickDownloadPdf()">Descargar pdf</button>
-        <button mat-button (click)="onClickDownloadXml()">Descargar xml</button>
-      </mat-card-actions>
-    </mat-card>
 
+    <mat-card-content >
+      <table >
+        <tr>
+          <th>CDC</th>
+          <td>{{documento[0].cdc}}</td>
+        </tr>
+        <tr>
+          <th>Timbrado</th>
+          <td>{{documento[0].timbrado}}</td>
+        </tr>
+
+        <tr>
+          <th >Número</th>
+          <td>{{documento[0].establecimiento}}-{{documento[0].puntoExpedicion}}-{{documento[0].secuencia}}</td>
+        </tr>
+
+        <tr>
+          <th>Fecha Emisión</th>
+          <td>{{documento[0].fechaEmision | date:'d/M/yyyy'}}</td>
+        </tr>
+
+        <tr>
+          <th>Estado</th>
+          <td>{{documento[0].estado}}</td>
+        </tr>
+      </table>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button  class="download-button" (click)="onClickDownloadPdf()">Descargar pdf</button>
+      <button  class="download-button" (click)="onClickDownloadXml()">Descargar xml</button>
+    </mat-card-actions>
   </mat-card>
-
 </div>
+
+

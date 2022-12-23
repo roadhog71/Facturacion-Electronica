@@ -21,7 +21,7 @@ export class InvoiceDownloaderComponent implements OnInit {
               private router: Router)
               {
                 this.loginForm = this.fb.group({
-                  email: ['', Validators.required]
+                  cdc: ['', Validators.required],
                   //password: ['', [Validators.required, Validators.minLength(6)]],
                 });
               }
@@ -29,8 +29,8 @@ export class InvoiceDownloaderComponent implements OnInit {
   ngOnInit(): void {}
 
 
-  get email() {
-    return this.loginForm.get('email');
+  get cdc() {
+    return this.loginForm.get('cdc');
   }
 
 
@@ -51,9 +51,9 @@ export class InvoiceDownloaderComponent implements OnInit {
     this.cardUrl = 'factura'
     //let consStr = JSON.stringify(this.consultaResponse);
     //this.router.navigate([`${this.cardUrl}`, consStr]);
-    let route = [`${this.cardUrl}/${this.email?.value}`]
+    let route = [`${this.cardUrl}/${this.cdc?.value}`]
     console.log('route:', route)
-    this.router.navigate([`${this.cardUrl}/${this.email?.value}`]);
+    this.router.navigate([`${this.cardUrl}/${this.cdc?.value}`]);
   }
 
 

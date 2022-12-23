@@ -2,3 +2,75 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.columnaTitulo {
+  align-content: flex-start;
+}
+
+.download-button {
+  border-radius: 30px;
+  color: #fff;
+  background-color: #49b73a;
+  border: none;
+  font-size: 15px;
+  padding: 10px, 24px, 10px, 24px;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+  background: #673ab7;
+  border-radius: 100px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-left: 35px;
+}
+
+.center-card {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  margin: 50px 0 0 -50px;
+}
+
+.container-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: none;
+  box-shadow: none;
+  flex-wrap: wrap;
+}
+
+.invoice-card {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 50%;
+  box-shadow: none;
+  flex-direction: column;
+  font-size: small;
+}
+
+.slide-toggle-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.credential-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* box-shadow: none; */
+  height: 100%;
+}
+
+.download-container {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+

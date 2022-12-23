@@ -37,8 +37,6 @@ import { TableComponent } from './table/table.component';
 import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FacturaCardComponent } from './factura-card/factura-card.component';
-import { PrimengModule } from './primeng/primeng/primeng.module';
-
 import { CaptchaComponent } from './captcha/captcha.component';
 
 @NgModule({
@@ -80,7 +78,6 @@ import { CaptchaComponent } from './captcha/captcha.component';
     MatCheckboxModule,
     RouterModule,
     HttpClientModule,
-    PrimengModule,
     NgxCaptchaModule
   ],
   providers: [],

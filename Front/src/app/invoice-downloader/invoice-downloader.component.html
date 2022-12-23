@@ -1,6 +1,3 @@
-<nav>
-  <app-navbar></app-navbar>
-</nav>
 <mat-card class="container-card">
   <mat-card class="invoice-card">
     <h1>Descarga tu factura</h1>
@@ -31,16 +28,16 @@
     <h2>Accede con tu CDC a tu factura electronica</h2>
 
     <form (ngSubmit)="onFind()" name="loginForm" [formGroup]="loginForm">
-      <div class="emailInput">
+      <div class="cdcInput">
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>CDC</mat-label>
           <input
-            formControlName="email"
+            formControlName="cdc"
             matInput
             placeholder="Ingrese su CDC"
             required
           />
-          <mat-error *ngIf="!loginForm.controls['email'].valid">
+          <mat-error *ngIf="!loginForm.controls['cdc'].valid">
             CDC es requerido
           </mat-error>
         </mat-form-field>
@@ -92,7 +89,7 @@
           </mat-select>
         </mat-form-field> -->
       </div>
-      <div><button type="submit"  class="download-button">Descargar</button></div>
+      <div><button type="submit"  class="download-button">Buscar factura</button></div>
     </form>
     <app-captcha></app-captcha>
     <p class="info-tittle">Mas informacion en:</p>
