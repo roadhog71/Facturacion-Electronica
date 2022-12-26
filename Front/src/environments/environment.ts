@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   base_url: 'http://localhost:8080',
+  captcha_site_key: "6Lfa5KojAAAAAFwp4A6wDZogMtgxZXPwIh2rtXwl",
 };
 
 /*

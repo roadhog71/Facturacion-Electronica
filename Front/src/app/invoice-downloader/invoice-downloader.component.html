@@ -27,7 +27,7 @@
   <mat-card class="credential-card">
     <h2>Accede con tu CDC a tu factura electronica</h2>
 
-    <form (ngSubmit)="onFind()" name="loginForm" [formGroup]="loginForm">
+    <form (ngSubmit)="onFind()" name="findForm" [formGroup]="findForm">
       <div class="cdcInput">
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>CDC</mat-label>
@@ -37,7 +37,7 @@
             placeholder="Ingrese su CDC"
             required
           />
-          <mat-error *ngIf="!loginForm.controls['cdc'].valid">
+          <mat-error *ngIf="!findForm.controls['cdc'].valid">
             CDC es requerido
           </mat-error>
         </mat-form-field>
@@ -54,6 +54,12 @@
               alt=""
           /></span>
         </div> -->
+      </div>
+      <div>
+        <ngx-recaptcha2 #captchaElem
+          [siteKey]="siteKey"
+          formControlName="recaptcha">
+        </ngx-recaptcha2>
       </div>
 
       <!-- <mat-form-field class="full-width" appearance="outline">
@@ -79,23 +85,35 @@
           PIN es requerido
         </mat-error>
       </mat-form-field> -->
-      <div>
-        <!-- <mat-form-field appearance="fill">
+      <!-- <div>
+        <mat-form-field appearance="fill">
           <mat-label>Seleccione un formato</mat-label>
           <mat-select [(value)]="selected">
             <mat-option value="A4">A4</mat-option>
             <mat-option value="Ticket">Ticket</mat-option>
             <mat-option value="PDF">PDF</mat-option>
           </mat-select>
-        </mat-form-field> -->
+        </mat-form-field>
+      </div> -->
+
+      <div class="button-container">
+        <div class=button-center>
+          <button mat-raised-button
+                  color="primary"
+                  type="submit"
+                  [disabled]="!findForm.valid">
+            Buscar factura
+        </button>
+        </div>
       </div>
-      <div><button type="submit"  class="download-button">Buscar factura</button></div>
     </form>
-    <app-captcha></app-captcha>
-    <p class="info-tittle">Mas informacion en:</p>
-    <a class="info-link" href="https://ekuatia.set.gov.py/consultas/"
-      >https://ekuatia.set.gov.py/consultas/</a
-    >
+
+    <div>
+      <p class="info-tittle">Mas informacion en:</p>
+      <a class="info-link" href="https://ekuatia.set.gov.py/consultas/"
+        >https://ekuatia.set.gov.py/consultas/</a
+      >
+    </div>
     <!-- <p class="create-account-tittle">
       Crea tu cuenta y accede a tdas tus facturas electronicas
     </p>

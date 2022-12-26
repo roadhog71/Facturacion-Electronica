@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ConsultaCdcResponse } from '../service/consulta.cdc.response';
-import { ConsultaResponse } from '../service/consulta.response';
-import { EfacturaService } from '../service/efactura.service';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-invoice-downloader',
@@ -15,22 +14,26 @@ export class InvoiceDownloaderComponent implements OnInit {
   hide: boolean = false;
   consultaResponse: any;
   cardUrl: any;
-  loginForm: FormGroup;
-
+  findForm: FormGroup;
+  public siteKey: any;
   constructor(private fb: FormBuilder,
               private router: Router)
               {
-                this.loginForm = this.fb.group({
+                this.findForm = this.fb.group({
                   cdc: ['', Validators.required],
+                  recaptcha: ['', Validators.required]
                   //password: ['', [Validators.required, Validators.minLength(6)]],
                 });
               }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.siteKey = environment.captcha_site_key;
+    console.log('siteKey', this.siteKey);
+  }
 
 
   get cdc() {
-    return this.loginForm.get('cdc');
+    return this.findForm.get('cdc');
   }
 
 
@@ -38,7 +41,7 @@ export class InvoiceDownloaderComponent implements OnInit {
 
   onFind() {
     console.log('Entra al find');
-    if (!this.loginForm.valid) {
+    if (!this.findForm.valid) {
       return;
     }
 
