@@ -4,7 +4,6 @@
       <mat-card-title>Documento encontrado</mat-card-title>
     </mat-card-header>
 
-
     <mat-card-content >
       <table >
         <tr>
@@ -31,12 +30,13 @@
           <td>{{documento[0].estado}}</td>
         </tr>
       </table>
-
     </mat-card-content>
 
     <mat-card-actions>
-      <button  class="download-button" (click)="onClickDownloadPdf()">Descargar pdf</button>
-      <button  class="download-button" (click)="onClickDownloadXml()">Descargar xml</button>
+        <div class="flex-item">
+          <button  mat-raised-button (click)="onClickDownloadPdf()" color="primary">Descargar pdf</button>
+          <button  mat-raised-button (click)="onClickDownloadXml()" color="primary">Descargar xml</button>
+        </div>
     </mat-card-actions>
   </mat-card>
 </div>
