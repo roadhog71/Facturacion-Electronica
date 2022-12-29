@@ -1,62 +1,76 @@
-<mat-card class="container-card">
-  <mat-card class="invoice-card">
-    <h1>Descarga tu factura</h1>
-    <p>
-      En el caso de que no hayas podido descargar tu factura, favor volvé a
-      intentarlo más tarde. El proceso de validación podría demorarse cómo
-      máximo 72 Hs.
-    </p>
-    <mat-card class="toggle">
-      <mat-slide-toggle [(ngModel)]="isChecked">{{
-        isChecked ? "A4" : "Ticket"
-      }}</mat-slide-toggle>
-    </mat-card>
-    <mat-card class="slide-toggle-container">
-      <img
-        mat-card-image
-        src="../../assets/images/invoice-example.png"
-        *ngIf="isChecked == false"
-      />
-      <img
-        mat-card-image
-        src="../../assets/images/Screenshot_20221027_114750.png"
-        *ngIf="isChecked == true"
-      />
-    </mat-card>
-  </mat-card>
-  <mat-card class="credential-card">
-    <h2>Accede con tu CDC a tu factura electronica</h2>
-    <form (ngSubmit)="onFind()" name="findForm" [formGroup]="findForm">
-      <mat-form-field class="full-width" appearance="outline">
-        <mat-label>CDC</mat-label>
-        <input
-          formControlName="cdc"
-          matInput
-          placeholder="Ingrese su CDC"
-          required
+<div class="container">
+  <div class="card-horizontal">
+    <div class="card-vertical">
+      <h1>Descarga tu factura</h1>
+      <p>
+        En el caso de que no hayas podido descargar tu factura, favor volvé a
+        intentarlo más tarde. El proceso de validación podría demorarse cómo
+        máximo 72 Hs.
+      </p>
+      <mat-card class="toggle">
+        <mat-slide-toggle [(ngModel)]="isChecked">{{
+          isChecked ? "A4" : "Ticket"
+        }}</mat-slide-toggle>
+      </mat-card>
+      <mat-card class="slide-toggle-container">
+        <img
+          mat-card-image
+          src="../../assets/images/invoice-example.png"
+          *ngIf="isChecked == false"
         />
-        <mat-error *ngIf="!findForm.controls['cdc'].valid">
-          CDC es requerido
-        </mat-error>
-      </mat-form-field>
-      <ngx-recaptcha2 #captchaElem
-        [siteKey]="siteKey"
-        formControlName="recaptcha">
-      </ngx-recaptcha2>
-      <div class="flex-item">
-        <button mat-raised-button
-                color="primary"
-                type="submit"
-                [disabled]="!findForm.valid">
-          Buscar factura
-        </button>
-      </div>
-    </form>
-    <div>
-      <p class="info-tittle">Mas informacion en:</p>
-      <a class="info-link" href="https://ekuatia.set.gov.py/consultas/"
-        >https://ekuatia.set.gov.py/consultas/</a
-      >
+        <img
+          mat-card-image
+          src="../../assets/images/Screenshot_20221027_114750.png"
+          *ngIf="isChecked == true"
+        />
+      </mat-card>
     </div>
-  </mat-card>
-</mat-card>
+    <div class="card-vertical">
+      <div class="card-form">
+        <div class="card-header">
+          <h2>Accede con tu CDC a tu factura electronica</h2>
+        </div>
+
+        <form (ngSubmit)="onFind()" class="card-form-content" name="findForm" [formGroup]="findForm">
+          <mat-form-field appearance="outline">
+            <mat-label>CDC</mat-label>
+            <input
+              formControlName="cdc"
+              matInput
+              placeholder="Ingrese su CDC"
+              required
+
+            />
+            <mat-error *ngIf="!findForm.controls['cdc'].valid">
+              CDC es requerido
+            </mat-error>
+          </mat-form-field>
+
+          <div class="flex-item-row">
+
+            <ngx-recaptcha2 #captchaElem
+              [siteKey]="siteKey"
+              formControlName="recaptcha">
+            </ngx-recaptcha2>
+
+            <button mat-raised-button
+                    color="primary"
+                    type="submit"
+                    [disabled]="!findForm.valid">
+              Buscar factura
+            </button>
+          </div>
+        </form>
+        <div class="flex-item-col">
+          <p class="info-tittle">Mas informacion en:</p>
+          <a class="info-link" href="https://ekuatia.set.gov.py/consultas/"
+            >https://ekuatia.set.gov.py/consultas/</a
+          >
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

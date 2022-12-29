@@ -14,6 +14,7 @@ export class FacturaCardComponent implements OnInit {
   consultaResponse: any;
   cdc: string = '';
   documento: any;
+  numeroFactura: any;
   constructor(private router: Router,
                       route: ActivatedRoute,
                       private service: EfacturaService) {
@@ -40,22 +41,30 @@ export class FacturaCardComponent implements OnInit {
 
     this.service.findAll(consultaRequest).subscribe((
     data: any) => {
-    this.consultaResponse = data as ConsultaResponse;
-    this.documento = this.consultaResponse['documento'] as Documento;
-    console.log(this.consultaResponse);
+      this.consultaResponse = data as ConsultaResponse;
+      this.documento = this.consultaResponse['documento'] as Documento;
 
+      console.log(this.consultaResponse);
+
+      let est = this.addZeros(this.documento[0].establecimiento, 3, '0');
+      let pEx = this.addZeros(this.documento[0].puntoExpedicion, 3, '0');
+      let sec = this.addZeros(this.documento[0].secuencia, 7, '0');
+
+      this.numeroFactura = est.concat('-', pEx, '-', sec);
     });
   }
 
-  downloadPdf(base64String:any, fileName:string){
+  addZeros(part:number, totalLen:number, fillCaracter:string):string{
+    return String(part).padStart(totalLen, fillCaracter);
+  }
 
+  downloadPdf(base64String:any, fileName:string){
       // Download PDF in Chrome etc.
       const source = `data:application/pdf;base64,${base64String}`;
       const link = document.createElement("a");
       link.href = source;
       link.download = `${fileName}.pdf`
       link.click();
-
   }
 
   downloadXml(data:any){
@@ -65,22 +74,10 @@ export class FacturaCardComponent implements OnInit {
     link.href = source;
     link.download = `${fileName}.xml`
     link.click();
-
-    /*const link = document.createElement('a');
-    var blob = new Blob([data], {
-      type: 'xml'
-    });
-    var url = URL.createObjectURL(blob);
-    link.href = url;
-    link.setAttribute('download', 'efactura.xml');
-    document.body.appendChild(link);
-    link.click();*/
-
 }
 
 
   onClickDownloadPdf(){
-
     let base64String =  this.documento[0].kuDE;
     console.log('kude', base64String)
     this.downloadPdf(base64String,"efactura");

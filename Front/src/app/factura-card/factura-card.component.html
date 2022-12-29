@@ -1,44 +1,32 @@
-<div class="center-card">
-  <mat-card class="container-card">
-    <mat-card-header>
-      <mat-card-title>Documento encontrado</mat-card-title>
-    </mat-card-header>
+<div class="container">
+  <div class="card">
+    <div class="card-header titulo">
+      Documento encontrado
+    </div>
+    <div class="card-content">
+      <div class="card-content-table">
+        <label class="label">CDC:</label>
+        <span>{{documento[0].cdc}}</span>
 
-    <mat-card-content >
-      <table >
-        <tr>
-          <th>CDC</th>
-          <td>{{documento[0].cdc}}</td>
-        </tr>
-        <tr>
-          <th>Timbrado</th>
-          <td>{{documento[0].timbrado}}</td>
-        </tr>
+        <label class="label">Timbrado:</label>
+        <span class="field">{{documento[0].timbrado}}</span>
 
-        <tr>
-          <th >Número</th>
-          <td>{{documento[0].establecimiento}}-{{documento[0].puntoExpedicion}}-{{documento[0].secuencia}}</td>
-        </tr>
+        <label class="label">Número:</label>
+        <span class="field">{{numeroFactura}}</span>
 
-        <tr>
-          <th>Fecha Emisión</th>
-          <td>{{documento[0].fechaEmision | date:'d/M/yyyy'}}</td>
-        </tr>
+        <label class="label">Fecha Emisión:</label>
+        <span class="field">{{documento[0].fechaEmision | date:'d/M/yyyy'}}</span>
 
-        <tr>
-          <th>Estado</th>
-          <td>{{documento[0].estado}}</td>
-        </tr>
-      </table>
-    </mat-card-content>
+        <label class="label">Estado:</label>
+        <span class="field">{{documento[0].estado}}</span>
+      </div>
 
-    <mat-card-actions>
-        <div class="flex-item">
-          <button  mat-raised-button (click)="onClickDownloadPdf()" color="primary">Descargar pdf</button>
-          <button  mat-raised-button (click)="onClickDownloadXml()" color="primary">Descargar xml</button>
-        </div>
-    </mat-card-actions>
-  </mat-card>
+    </div>
+    <div class="card-footer">
+      <button  mat-raised-button (click)="onClickDownloadPdf()" color="primary">Descargar pdf</button>
+      <button  mat-raised-button (click)="onClickDownloadXml()" color="primary">Descargar xml</button>
+    </div>
+  </div>
 </div>
 
 
