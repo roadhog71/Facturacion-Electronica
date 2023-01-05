@@ -27,40 +27,42 @@
     </div>
     <div class="card-vertical">
       <div class="card-form">
-        <div class="card-header">
-          <h2>Accede con tu CDC a tu factura electronica</h2>
+        <div class="card-header titulo">
+          Accede con tu CDC a tu factura electronica
         </div>
+        <!-- <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>-->
+        <form name="findForm" (ngSubmit)="onFind()" class="card-form-content"  [formGroup]="findForm">
 
-        <form (ngSubmit)="onFind()" class="card-form-content" name="findForm" [formGroup]="findForm">
-          <mat-form-field appearance="outline">
-            <mat-label>CDC</mat-label>
             <input
               formControlName="cdc"
               matInput
               placeholder="Ingrese su CDC"
               required
+              class="field-input"
 
             />
-            <mat-error *ngIf="!findForm.controls['cdc'].valid">
+            <label class="error-message" *ngIf="!findForm.controls['cdc'].valid">
               CDC es requerido
-            </mat-error>
-          </mat-form-field>
+            </label>
 
-          <div class="flex-item-row">
+          <div class="flex-item-col">
 
-            <ngx-recaptcha2 #captchaElem
-              [siteKey]="siteKey"
-              formControlName="recaptcha">
-            </ngx-recaptcha2>
+              <button class="btn-descarga"
+                type="submit"
+                [disabled]="!findForm.valid">
+                <img src="../../assets/images/search.png" alt="icono pdf"/>
+                <span>Buscar factura</span>
+              </button>
 
-            <button mat-raised-button
-                    color="primary"
-                    type="submit"
-                    [disabled]="!findForm.valid">
-              Buscar factura
-            </button>
+
+              <ngx-recaptcha2 #captchaElem
+                [siteKey]="siteKey"
+                formControlName="recaptcha">
+              </ngx-recaptcha2>
+
           </div>
         </form>
+
         <div class="flex-item-col">
           <p class="info-tittle">Mas informacion en:</p>
           <a class="info-link" href="https://ekuatia.set.gov.py/consultas/"

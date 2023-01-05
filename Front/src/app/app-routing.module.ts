@@ -7,16 +7,18 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { InvoiceTableComponent } from './invoice-table/invoice-table.component';
 import { FacturaCardComponent } from './factura-card/factura-card.component';
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'home/login', component: LoginComponent },
-  { path: 'home/sign-up/login', component: LoginComponent },
-  { path: 'home/invoice-downloader', component: InvoiceDownloaderComponent },
+  //{ path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'invoice-downloader', pathMatch: 'full' },
+  { path: 'invoice-downloader', component: InvoiceDownloaderComponent },
+  //{ path: 'home', component: HomeComponent },
+  //{ path: 'home/login', component: LoginComponent },
+  //{ path: 'home/sign-up/login', component: LoginComponent },
+  //{ path: 'home/invoice-downloader', component: InvoiceDownloaderComponent },
   { path: 'factura/:cdc', component: FacturaCardComponent},
 
-  { path: 'home/sign-up', component: SignUpComponent },
-  { path: 'home/login/sign-up', component: SignUpComponent },
-  { path: 'home/invoice-table', component: InvoiceTableComponent },
+  //{ path: 'home/sign-up', component: SignUpComponent },
+  //{ path: 'home/login/sign-up', component: SignUpComponent },
+  //{ path: 'home/invoice-table', component: InvoiceTableComponent },
 
 ];
 

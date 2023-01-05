@@ -1,12 +1,12 @@
 <div class="container">
   <div class="card">
     <div class="card-header titulo">
-      Documento encontrado
+      Datos de la factura
     </div>
     <div class="card-content">
       <div class="card-content-table">
         <label class="label">CDC:</label>
-        <span>{{documento[0].cdc}}</span>
+        <span class="field">{{documento[0].cdc}}</span>
 
         <label class="label">Timbrado:</label>
         <span class="field">{{documento[0].timbrado}}</span>
@@ -23,8 +23,15 @@
 
     </div>
     <div class="card-footer">
-      <button  mat-raised-button (click)="onClickDownloadPdf()" color="primary">Descargar pdf</button>
-      <button  mat-raised-button (click)="onClickDownloadXml()" color="primary">Descargar xml</button>
+      <a class="btn-descarga" (click)="onClickDownloadPdf()">
+        <img src="../../assets/images/pdf.svg" alt="icono pdf" />
+        <span>Descargar Kude</span>
+      </a>
+
+      <a class="btn-descarga"  (click)="onClickDownloadXml()">
+        <img src="../../assets/images/xml.svg" alt="icono xml"/>
+        <span>Descargar XML</span>
+      </a>
     </div>
   </div>
 </div>
