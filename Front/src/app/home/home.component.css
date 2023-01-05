@@ -1,0 +1,181 @@
+.container-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: none;
+  box-shadow: none;
+  flex-wrap: wrap;
+}
+
+.invoice-card {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 50%;
+  box-shadow: none;
+  flex-direction: column;
+  font-size: small;
+}
+
+.slide-toggle-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.credential-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* box-shadow: none; */
+  height: 100%;
+}
+
+.credential-title {
+  font-weight: 500;
+}
+
+.download-container {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.full-width {
+  width: 210px;
+}
+
+/* .explanation-text {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 500px;
+  height: 100px;
+  margin-bottom: 70px;
+  font-weight: 500;
+} */
+
+/* .select-field {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 120px;
+  font-size: x-small;
+} */
+
+.invoice-pic {
+  max-height: 300%;
+  max-width: 300%;
+}
+
+.download-button {
+  border-radius: 30px;
+  color: #fff;
+  background-color: #49b73a;
+  border: none;
+  font-size: 15px;
+  padding: 10px, 24px, 10px, 24px;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+  background: #673ab7;
+  border-radius: 100px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-left: 35px;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  margin-left: 10px;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  /* background-color: #555; */
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  top: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.more-info {
+  box-shadow: none;
+  align-items: center;
+  align-content: center;
+}
+
+.info-tittle {
+  margin-right: 20px;
+}
+
+.info-link {
+  margin-right: 20px;
+}
+
+.create-account-tittle {
+  margin-top: 60px;
+  margin-right: 20px;
+}
+
+.create-account-button {
+  border-radius: 30px;
+  color: #fff;
+  background-color: #673ab7;
+  border: none;
+  font-size: 15px;
+  padding: 10px, 24px, 10px, 24px;
+  margin-right: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+  background: #673ab7;
+  border-radius: 100px;
+}
+
+.toggle {
+  display: flex;
+  justify-content: end;
+  box-shadow: none;
+}
+
+.slide-toggle-container {
+  box-shadow: none;
+}
