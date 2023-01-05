@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
@@ -60,25 +60,4 @@ export class InvoiceDownloaderComponent implements OnInit {
   }
 
 
-  /*onLogin() {
-    console.log('Entra al login');
-    if (!this.loginForm.valid) {
-      return;
-    }
-    let cdcRequest = { cdc: this.email?.value,
-                       retornarKuDE:true,
-                       retornarRespuestaOriginal: true,
-                       retornarXmlDE: true,
-                       apikey: '',
-                       usuario: ''};
-    console.log(cdcRequest);
-
-    this.service.findByCDC(cdcRequest).subscribe((
-      data: any) => {
-        this.cdcResponse = data as ConsultaCdcResponse;
-        console.log(this.cdcResponse);
-      });
-  }*/
-
-
-}
+}*/

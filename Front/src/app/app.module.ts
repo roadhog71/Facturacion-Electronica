@@ -26,7 +26,6 @@ import { NgxCaptchaModule } from 'ngx-captcha';
 // Components
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { InvoiceDownloaderComponent } from './invoice-downloader/invoice-downloader.component';
 import { BackButtonComponent } from './back-button/back-button.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SelectValueComponent } from './select-value/select-value.component';
@@ -44,7 +43,6 @@ import { CaptchaComponent } from './captcha/captcha.component';
     NavbarComponent,
     LoginComponent,
     HomeComponent,
-    InvoiceDownloaderComponent,
     BackButtonComponent,
     SignUpComponent,
     SelectValueComponent,
