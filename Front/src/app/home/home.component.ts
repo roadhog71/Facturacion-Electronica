@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MatRadioChange } from '@angular/material/radio';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
@@ -11,6 +12,7 @@ import { environment } from 'src/environments/environment';
 })
 export class HomeComponent implements OnInit {
   isChecked = true;
+  formatoSeleccionado:number = 0;
   hide: boolean = false;
   consultaResponse: any;
   cardUrl: any;
@@ -56,6 +58,10 @@ export class HomeComponent implements OnInit {
     let route = [`${this.cardUrl}/${this.cdc?.value}`]
     console.log('route:', route)
     this.router.navigate([`${this.cardUrl}/${this.cdc?.value}`]);
+  }
+
+  onChange(event: MatRadioChange){
+    this.formatoSeleccionado = event.value;
   }
 
 }

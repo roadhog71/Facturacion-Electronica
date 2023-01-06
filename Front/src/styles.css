@@ -11,23 +11,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   align-content: flex-start;
 }
 
-.download-button {
-  border-radius: 30px;
-  color: #fff;
-  background-color: #49b73a;
-  border: none;
-  font-size: 15px;
-  padding: 10px, 24px, 10px, 24px;
-  justify-content: center;
-  align-items: center;
-  width: 120px;
-  height: 40px;
-  background: #673ab7;
-  border-radius: 100px;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  margin-left: 35px;
-}
+
 
 .download-button:disabled,
 .download-button[disabled]{
@@ -52,6 +36,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
 
 
 
@@ -169,25 +154,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding-left: 2em;
   padding-top: 5em;
   padding-right: 10em;
-  justify-content: center;
+  max-width: 1300px;
+
 }
 
 .card-vertical{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
 }
 
 
-
-/*.card-header {
-  height: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3px;
-  margin-top: 20px;
-}*/
 
 .card-header {
 
@@ -216,14 +194,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   align-items: center;
 }
 
-/*.card-footer {
-  height: 50px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  padding: 10px;
-}*/
 
 .card-footer {
   display: flex;
@@ -303,8 +273,6 @@ label{
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
   transition-duration: 0.4s;
-
-
 }
 
 .btn-descarga img{
@@ -344,3 +312,28 @@ label{
   border-width: 2px;
   color: #999999;
 }
+
+
+.card-image{
+  display: flex;
+}
+
+.img-box{
+  max-height: 500px;
+  margin: auto;
+
+}
+
+.radio-group{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.radio-button{
+  margin: 20px;
+}
+
+
+

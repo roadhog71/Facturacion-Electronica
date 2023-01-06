@@ -7,23 +7,23 @@
         intentarlo más tarde. El proceso de validación podría demorarse cómo
         máximo 72 Hs.
       </p>
-      <mat-card class="toggle">
-        <mat-slide-toggle [(ngModel)]="isChecked">{{
-          isChecked ? "A4" : "Ticket"
-        }}</mat-slide-toggle>
-      </mat-card>
-      <mat-card class="slide-toggle-container">
-        <img
-          mat-card-image
-          src="../../assets/images/invoice-example.png"
-          *ngIf="isChecked == false"
+
+      <mat-radio-group [(ngModel)]="formatoSeleccionado" class="radio-group">
+          <mat-radio-button class="radio-button" [value]="0">Formato de factura</mat-radio-button>
+          <mat-radio-button class="radio-button" [value]="1">Formato de Ticket</mat-radio-button>
+      </mat-radio-group>
+
+      <div class="card-image">
+        <img class="img-box"
+          src="../../assets/images/factura.webp"
+          *ngIf="formatoSeleccionado === 0"
         />
-        <img
-          mat-card-image
-          src="../../assets/images/Screenshot_20221027_114750.png"
-          *ngIf="isChecked == true"
+        <img class="img-box"
+          src="../../assets/images/ticket.webp"
+          *ngIf="formatoSeleccionado === 1"
         />
-      </mat-card>
+      </div>
+
     </div>
     <div class="card-vertical">
       <div class="card-form">

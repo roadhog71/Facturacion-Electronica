@@ -22,6 +22,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { RouterModule } from '@angular/router';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import {MatRadioModule} from '@angular/material/radio';
 
 // Components
 import { LoginComponent } from './login/login.component';
@@ -75,7 +76,9 @@ import { CaptchaComponent } from './captcha/captcha.component';
     MatCheckboxModule,
     RouterModule,
     HttpClientModule,
-    NgxCaptchaModule
+    NgxCaptchaModule,
+    MatRadioModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
